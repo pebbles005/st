@@ -161,7 +161,7 @@ static uint forcemousemod = ShiftMask;
  */
 static MouseShortcut mshortcuts[] = {
     /* mask                 button   function        argument       release */
-    {XK_ANY_MOD, Button2, selpaste, {.i = 0}, 1},
+    {XK_ANY_MOD, Button2, clippaste, {.i = 0}, 1},
     {ShiftMask, Button4, ttysend, {.s = "\033[5;2~"}},
     {XK_ANY_MOD, Button4, ttysend, {.s = "\031"}},
     {ShiftMask, Button5, ttysend, {.s = "\033[6;2~"}},
@@ -180,11 +180,12 @@ static Shortcut shortcuts[] = {
     {XK_ANY_MOD, XK_Print, printsel, {.i = 0}},
     {ControlMask, XK_equal, zoom, {.f = +1}},
     {ControlMask, XK_minus, zoom, {.f = -1}},
-    {TERMMOD, XK_Home, zoomreset, {.f = 0}},
+    {TERMMOD, XK_U, kscrollup, {.i = 20}},
+    {TERMMOD, XK_D, kscrolldown, {.i = 20}},
     {TERMMOD, XK_C, clipcopy, {.i = 0}},
     {TERMMOD, XK_V, clippaste, {.i = 0}},
-    {TERMMOD, XK_Y, selpaste, {.i = 0}},
-    {ShiftMask, XK_Insert, selpaste, {.i = 0}},
+    {TERMMOD, XK_Y, clippaste, {.i = 0}},
+    {ShiftMask, XK_Insert, clippaste, {.i = 0}},
     {TERMMOD, XK_Num_Lock, numlock, {.i = 0}},
 };
 
